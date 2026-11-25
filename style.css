@@ -1,0 +1,1825 @@
+.all-cards-start {
+  width: 100%;
+}
+
+
+/*NOT ACCURATE ON PURPOSE FIX TO MAKE READY: 
+.hover-card-1 {
+width: 100%;
+}
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+
+/*BODY rules*/
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  background-image: url('images/background_grid_2.jpeg');
+  background-size: cover;
+  background-blend-mode: soft-light;
+  color: white;
+  font-family: Arial, sans-serif;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+
+.header {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  flex-basis: 100%;
+  text-align: center;
+}
+
+
+
+.footer-tka {
+  text-align: center;
+  padding: 0px;
+  color: rgba(255, 255, 255, 0.7);
+  flex-basis: end;
+  margin-top: 20vh;
+  z-index: 999;
+}
+
+.footer-tka2 {
+  text-align: center;
+  flex-basis: end;
+  z-index: 999;
+  margin-top: 10vh;
+  text-shadow: 3px 1px 2px rgb(0, 0, 0);
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  font-size: larger;
+  font-weight: 900;
+  font-style: italic;
+  -webkit-text-stroke: medium;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  -webkit-text-stroke-width: 0.75px;
+}
+
+.h9-tka {
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: visible;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+}
+
+.h1-tka {
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  margin-left: 8vw;
+}
+
+.h3-tka {
+  text-align: center;
+  color: white;
+  margin-top: 0px;
+  flex-basis: 99%;
+  transition: color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.h4-tka {
+  text-align: center;
+  color: white;
+  margin: 10px 0 5px 0;
+  font-size: clamp(2rem, 8vw, 7.5rem);
+  flex-basis: 100%;
+}
+
+.p-tka {
+  font-size: smaller;
+  font-weight: 900;
+  text-decoration: overline;
+  text-decoration-color: red;
+  text-align: center;
+  font-size: 18px;
+}
+
+
+
+.card-clickables-backing-border {
+  border: rgb(0, 0, 0);
+  border-width: 10px;
+  border-style: solid;
+  min-height: 50vh;
+}
+
+
+.card-clickables-wrapper {
+  position: relative;
+}
+
+.card-clickables-behind,
+.card-clickables {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  min-height: 120vh;
+}
+
+/*TURNER LOOK HERE FOR THE MIRRORING CHANGES THIS IS THE SPOT*/
+
+.card-clickables {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 60vh;
+  -webkit-box-reflect: below 0vh linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+  z-index: 2;
+}
+
+.card-clickables-behind {
+  display: flex;
+  justify-content: right;
+  padding-right: 5vw;
+  overflow: visible;
+  min-height: 50vh;
+  -webkit-box-reflect: below 1vh linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+  border: rgb(255, 255, 255);
+  border-width: 4px;
+  border-style: solid;
+  z-index: 1;
+  text-shadow: 3px 1px 2px rgba(250, 19, 19, 0.416);
+  -webkit-text-fill-color: rgba(255, 0, 0, 0.514);
+  font-size: larger;
+  font-weight: 900;
+  font-style: italic;
+  -webkit-text-stroke: medium;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  -webkit-text-stroke-width: 0.25px;
+}
+
+.card-clickables-random {
+  overflow: visible;
+  /*
+                 border: rgb(12, 185, 113);
+             border-width: 5px;
+             border-style: solid;
+            */
+  width: max(30vw);
+  height: max(30vh);
+  /*THIS IS THE SIZING OF THE BOUNDING BOX WITH COLLISION PUSHING PACKS TO THE RIGHT*/
+}
+
+.card-clickables-random:hover {
+  /*left blank in this moment on purpose*/
+}
+
+/*ALL CODE RELATING TO IMAGE TOGGERS ie: pack1.html > down*/
+
+/* IMAGE TOGGLER down PACK ONE*/
+/* Hide the actual checkbox */
+.image-toggler-card-1 input {
+  display: none;
+}
+
+/* Show only the first image by default */
+.image-two-card-1 {
+  display: none;
+}
+
+/* When the checkbox is checked, swap the images */
+.image-toggler-card-1 input:checked~.image-one-card-1 {
+  display: none;
+}
+
+.image-toggler-card-1 input:checked~.image-two-card-1 {
+  display: block;
+}
+
+.image-one-card-1,
+.image-two-card-1 {
+  cursor: pointer;
+}
+
+/* IMAGE TOGGLER up PACK ONE*/
+
+
+
+/* IMAGE TOGGLER down PACK TWO*/
+/* Hide the actual checkbox */
+.image-toggler-card-2 input {
+  display: none;
+}
+
+/* Show only the first image by default */
+.image-two-card-2 {
+  display: none;
+}
+
+/* When the checkbox is checked, swap the images */
+.image-toggler-card-2 input:checked~.image-one-card-2 {
+  display: none;
+}
+
+.image-toggler-card-2 input:checked~.image-two-card-2 {
+  display: block;
+}
+
+/* IMAGE TOGGLER up PACK TWO*/
+
+/* IMAGE TOGGLER down PACK THREE*/
+/* Hide the actual checkbox */
+.image-toggler-card-3 input {
+  display: none;
+}
+
+/* Show only the first image by default */
+.image-two-card-3 {
+  display: none;
+}
+
+/* When the checkbox is checked, swap the images */
+.image-toggler-card-3 input:checked~.image-one-card-3 {
+  display: none;
+}
+
+.image-toggler-card-3 input:checked~.image-two-card-3 {
+  display: block;
+}
+
+/* IMAGE TOGGLER up PACK THREE*/
+
+
+
+/* IMAGE TOGGLER down PACK FOUR*/
+/* Hide the actual checkbox */
+.image-toggler-card-4 input {
+  display: none;
+}
+
+/* Show only the first image by default */
+.image-two-card-4 {
+  display: none;
+}
+
+/* When the checkbox is checked, swap the images */
+.image-toggler-card-4 input:checked~.image-one-card-4 {
+  display: none;
+}
+
+.image-toggler-card-4 input:checked~.image-two-card-4 {
+  display: block;
+}
+
+/* IMAGE TOGGLER up PACK FOUR*/
+
+
+
+/* IMAGE TOGGLER down PACK FIVE*/
+/* Hide the actual checkbox */
+.image-toggler-card-5 input {
+  display: none;
+}
+
+/* Show only the first image by default */
+.image-two-card-5 {
+  display: none;
+}
+
+/* When the checkbox is checked, swap the images */
+.image-toggler-card-5 input:checked~.image-one-card-5 {
+  display: none;
+}
+
+.image-toggler-card-5 input:checked~.image-two-card-5 {
+  display: block;
+}
+
+/* IMAGE TOGGLER up PACK FIVE*/
+
+/*ALL CODE RELATING TO IMAGE TOGGERS ie: pack1.html > up*/
+
+
+
+
+/*CONTAINERS for packs on HOVER > down*/
+
+
+.container-pack-random {
+  position: relative;
+  width: min(15vw, 150px);
+  height: min(30vh, 300px);
+  z-index: 0;
+  /*TILTING and TESTING*/
+  transform: rotate(7deg);
+  /*
+    border: rgb(4, 80, 48);
+    border-width: 2px;
+    border-style: solid;
+               */
+}
+
+
+
+.container-pack-1 {
+  position: relative;
+  width: min(15vw, 150px);
+  height: min(30vh, 300px);
+  z-index: 3;
+  /*TILTING*/
+  transform: rotate(-7deg);
+  /*
+              border: rgb(255, 136, 0);
+             border-width: 2px;
+             border-style: solid;
+           */
+}
+
+.container-pack-2 {
+  position: relative;
+  width: min(15vw, 150px);
+  height: min(30vh, 300px);
+  z-index: 4;
+  /*TILTING*/
+  transform: rotate(-5deg);
+  /*
+              border: rgb(0, 174, 255);
+             border-width: 2px;
+             border-style: solid;
+            */
+}
+
+.container-pack-3 {
+  position: relative;
+  width: min(15vw, 150px);
+  height: min(30vh, 300px);
+  z-index: 5;
+  /*
+              border: rgb(150, 12, 12);
+             border-width: 2px;
+             border-style: solid;
+             */
+}
+
+.container-pack-4 {
+  position: relative;
+  width: min(15vw, 150px);
+  height: min(30vh, 300px);
+  z-index: 2;
+  /*TILTING*/
+  transform: rotate(5deg);
+  /*
+              border: rgb(247, 0, 255);
+             border-width: 2px;
+             border-style: solid;
+            */
+}
+
+
+.container-pack-5 {
+  position: relative;
+  width: min(15vw, 150px);
+  height: min(30vh, 300px);
+  z-index: 1;
+  /*TILTING*/
+  transform: rotate(6deg);
+  /*
+              border: rgb(204, 0, 255);
+             border-width: 2px;
+             border-style: solid;
+            */
+}
+
+
+/*HOVER EFFECT FOR index.html CARD PACKS*/
+.png-wrapper {
+  position: relative;
+  left: 10%;
+  left: 10%;
+  width: min(15vw, 150px);
+  height: min(30vh, 300px);
+  /*
+               border: rgb(0, 60, 255);
+             border-width: 1px;
+             border-style: solid;
+            */
+}
+
+/*problem witih middle pack not showing if absolute changed to fixed, this is supposed to change the hover text location*/
+
+/*TURNER LOOK HERE FOR THE MOVEMENT UP ON HOVER*/
+
+.floating-png {
+  width: 100%;
+  max-width: 30vh;
+  height: auto;
+  display: block;
+  transform: translateX(0%) translateY(0px);
+  /*change this transform /\ to 120px for the original amount of visual push down*/
+  transition: transform 0.5s ease;
+  margin-top: min(120px);
+  background-color: rgba(255, 255, 255, 0.507);
+}
+
+.floating-png:hover {
+  transform: translateX(0%) translateY(-20px);
+  /*
+  border: red;
+  border-width: 5px;
+  border-style: solid;
+  */
+}
+
+
+/*ON LOAD CARDS SWING INTO PLACE + the transition time from after immediate hover to held hover*/
+.container-pack-1,
+.container-pack-2,
+.container-pack-3,
+.container-pack-4,
+.container-pack-5 {
+  transition: transform 1s ease-out;
+}
+
+/*ON HOVER CARD MOVES TO FRONT*/
+.container-pack-1:hover,
+.container-pack-2:hover,
+.container-pack-3:hover,
+.container-pack-4:hover,
+.container-pack-5:hover {
+  z-index: 999;
+  transform: translateX(0%) translateY(-20px);
+}
+
+
+
+
+/*THIS IS FOR THE index.html CASINO FEEL*/
+@keyframes jackpotShake {
+  0% {
+    transform: translate(0, 0) scale(1.01);
+  }
+
+  50% {
+    transform: translate(0.3px, -0.3px) scale(1.015);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1.01);
+  }
+}
+
+@keyframes textGlitch {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+
+  20% {
+    opacity: 0.8;
+    filter: blur(1px);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0.6;
+    filter: blur(2px);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+.jackpot {
+  animation: jackpotShake 0.8s ease-in-out infinite;
+}
+*/
+
+.glitch {
+  animation: textGlitch 3.6s infinite;
+}
+
+.gold {
+  color: gold;
+}
+
+.random-active {
+  color: gold;
+  text-shadow: 0 0 2px gold, 0 0 5px gold, 0 0 8px gold;
+  animation: textGlitch 3.6s infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*DESKTOP+ CSS FROM HERE ON*/
+/* =========================
+   LARGER SCREEN VERSION
+   ========================= */
+
+@media (min-width: 1410px) {
+
+  /*about me section*/
+  .about-me-container {
+    position: fixed;
+    top: 90px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+  }
+  .about-me-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    max-height: 600px;
+  }
+  .about-me-btn {
+    width: 150px;
+    height: auto;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    opacity: 0.5;
+  }
+  .about-me-btn:hover {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+
+  /*how i made this website section*/
+  .how-i-made-this-site-container {
+    position: fixed;
+    top: 130px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+  }
+  .how-i-made-this-site-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    max-height: 600px;
+  }
+  .how-i-made-this-site-btn {
+    width: 200px;
+    height: auto;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    opacity: 0.5;
+  }
+  .how-i-made-this-site-btn:hover {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+
+  /*slots section*/
+  .slots-container {
+    position: fixed;
+    top: 60px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+  }
+  .slots-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    max-height: 600px;
+  }
+  .slots-btn {
+    width: 150px;
+    height: auto;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    opacity: 0.5;
+  }
+  .slots-btn:hover {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+
+  /*profile section*/
+  .profile-container {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+  }
+  .profile-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    max-height: 600px;
+  }
+  .profile-btn {
+    width: 80px;
+    height: auto;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    opacity: 0.5;
+  }
+  .profile-btn:hover {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+
+
+
+  /*carousel etc section*/
+  .carousel-container {
+    display: none;
+  }
+
+  .mobile-instructions {
+    display: none;
+  }
+
+  .mobile-clickables-toggle {
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    min-height: 60vh;
+    -webkit-box-reflect: below 0vh linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+    z-index: 2;
+    margin-right: 8vw;
+  }
+
+
+
+
+  .header-mobile {
+    position: fixed;
+    top: 0%;
+    left: 0;
+
+    width: 100%;
+    height: 6vh;
+    /*
+    background: rgba(255, 255, 255, 0.85);
+*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    padding: 0 24px;
+    margin-top: 93vh;
+
+    z-index: 3;
+
+    /*
+    backdrop-filter: blur(8px);
+*/
+  }
+
+  /* BUTTONS MOBILE menu*/
+  .header-btn-mobile {
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+  }
+
+  .header-btn-mobile:hover {
+    transform: scale(1.1);
+  }
+
+  .header-btn-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+
+
+  .header-btn-2-mobile {
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+  }
+
+  .header-btn-2-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+
+
+  .header-btn-3-mobile {
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+  }
+
+  .header-btn-3-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+
+
+  .header-btn-4-mobile {
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+  }
+
+  .header-btn-4-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .mobile-bottom-bar {
+    display: none;
+  }
+
+  .scrolling-text-container-v3 {
+    display: none;
+  }
+
+  .scrolling-text-container-v4 {
+    display: none;
+  }
+
+  /* CURRENTLY disabled, scrolling text on desktop version REMOVE DISPLAY NONE IN FIRST DIV */
+
+  .scrolling-text-container-v2 {
+    background-color: #eff5ff00;
+    border-radius: 4px;
+    overflow: hidden;
+
+    position: fixed;
+    top: 20vh;
+
+    width: 100vw;
+
+    display: none;
+  }
+
+  /* Inner container styles */
+  .scrolling-text-inner-v2 {
+    display: flex;
+    white-space: nowrap;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 8px 0;
+  }
+
+  /* Text styles */
+  .scrolling-text-v2 {
+    display: flex;
+  }
+
+  .scrolling-text-item-1-v2 {
+    padding: 0 30px;
+    color: white;
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+
+  }
+
+  .scrolling-text-item-2-v2 {
+    padding: 0 30px;
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 5px rgb(255, 0, 0);
+
+  }
+
+  .scrolling-text-item-divider-v2 {
+    padding: 0 30px;
+    color: rgb(255, 187, 0);
+    text-shadow: 2px 2px 5px rgb(255, 208, 0);
+
+  }
+
+  .scrolling-text-item-temporary-v2 {
+    padding: 0 30px;
+    color: rgb(92, 143, 253);
+    text-shadow: 2px 2px 5px rgb(40, 116, 202);
+
+  }
+
+
+  /* Apply the animation to the text items */
+  .scrolling-text-inner-v2>div {
+    animation: var(--direction) var(--marquee-speed) linear infinite;
+  }
+
+  /* Pause the animation when a user hovers over it */
+  .scrolling-text-container-v2:hover .scrolling-text-inner-v2>div {
+    animation-play-state: paused;
+  }
+
+  /* Setting the Animation using Keyframes */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+/*MOBILE CSS FROM HERE ON*/
+/* =========================
+   MOBILE VERSION
+   ========================= */
+
+@media (max-width: 1410px) {
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    overflow-y: scroll;
+    overscroll-behavior-y: none;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+  }
+
+  body {
+
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #111;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    overflow-x: hidden;
+    overflow-y: visible;
+
+    font-family: Arial, sans-serif;
+
+        background: linear-gradient(-45deg, #af320c, #a80b47, #0a7aa3, #0a9675);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+  }
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+
+
+  /* HEADER MOBILE BAR */
+  .header-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6vh;
+    /*
+    background: rgba(255, 255, 255, 0.85);
+*/
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+
+    padding: 0 24px;
+    margin-top: 12vh;
+
+    z-index: 10;
+
+    /*
+    backdrop-filter: blur(8px);
+*/
+  }
+
+  /* BUTTONS MOBILE menu?*/
+  .header-btn-mobile {
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+  }
+
+  .header-btn-mobile:hover {
+    transform: scale(1.1);
+  }
+
+  .header-btn-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+
+
+  .header-btn-2-mobile {
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+  }
+
+  .header-btn-2-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+
+
+  .header-btn-3-mobile {
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+  }
+
+  .header-btn-3-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+
+
+  .header-btn-4-mobile {
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+  }
+
+  .header-btn-4-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+
+
+
+
+  .carousel-container {
+
+    width: 100vw;
+    height: 80vh;
+    margin-top: 20vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 3;
+    /*background: linear-gradient(#111, rgba(255, 0, 0, 0.116));*/
+  }
+
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+
+    perspective: 2000px;
+    transform-style: preserve-3d;
+  }
+
+  .card {
+
+    -webkit-box-reflect: below 3vh linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+
+    transition:
+      opacity .2s linear;
+  }
+
+
+
+  .card img {
+
+    width: 190px;
+    display: block;
+
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .card.active {
+
+    z-index: 100;
+
+    transform:
+      translate(-50%, -50%) scale(1.15);
+
+    opacity: 1;
+  }
+
+
+  /*ターナー*/
+
+  /* HIDING & then changing THE DESKTOP VERSION into MOBILE BEGINS HERE */
+
+  .card-clickables-backing-border {
+
+    display: none;
+
+    width: 100vw;
+    height: 50vh;
+    align-items: center;
+
+    border: none;
+  }
+
+  .card-clickables {
+
+    display: none;
+
+    width: 100vw;
+    height: 50vh;
+    align-items: center;
+
+    border: none;
+
+    -webkit-box-reflect: none;
+  }
+
+  .card-clickables-random {
+
+    display: none;
+
+    width: 100vw;
+    height: 50vh;
+    align-items: center;
+
+    border: none;
+  }
+
+  .container-pack-random {
+
+    display: none;
+
+    width: 100vw;
+    height: 50vh;
+    align-items: center;
+
+    border: none;
+  }
+
+  .card-clickables-behind {
+    display: none;
+  }
+
+  .mobile-clickables-toggle {
+    display: none;
+  }
+
+  .h1-tka {
+
+    text-align: center;
+    margin: 0 0 20px 0;
+    font-size: 1.3rem;
+    order: -1;
+  }
+
+  .h3-tka {
+    /*8vh perfect*/
+    margin-top: 8vh;
+
+    position: absolute;
+    width: 100vw;
+
+    color: rgba(255, 0, 0, 0.712);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
+    text-align: center;
+    justify-content: space-between;
+
+    z-index: 9999;
+
+    text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.767);
+
+  }
+
+  .h4-tka {
+    /*2vh perfect*/
+    margin-top: 2vh;
+
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 8vh;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5rem;
+
+    font-size: clamp(2rem, 9vw, 3.5rem);
+
+
+    z-index: 9999;
+
+  }
+
+  .footer-tka {
+
+    /*absolute within position is allowing the free floating placement*/
+    position: absolute;
+
+    margin-top: 89vh;
+    padding-bottom: 0px;
+    font-size: 1rem;
+
+    width: 100vw;
+
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(29, 26, 26, 0.767);
+
+    z-index: 9999;
+
+  }
+
+  .mobile-scrolling-top-bar-left {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+    width: 10vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+    margin-top: 0vh;
+    margin-left: 0vw;
+    border-radius: 0px;
+    color: black;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .mobile-scrolling-top-bar-right {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+    width: 10vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+    margin-top: 0vh;
+    margin-left: 90vw;
+    border-radius: 0px;
+    color: black;
+    text-align: center;
+    overflow: hidden;
+  }
+
+
+  .mobile-top-bar-left {
+    display: none;
+
+
+
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+    width: 10vw;
+    height: 60vh;
+    position: absolute;
+    z-index: 9;
+    margin-top: 40vh;
+    margin-left: 0vw;
+    border-radius: 0px;
+    color: black;
+    text-align: center;
+    padding: 1.5vh;
+    mix-blend-mode: screen;
+    backdrop-filter: blur(2px);
+    filter: blur(0px);
+    box-shadow: 0 0 15px 2px #141414;
+
+  }
+
+  .mobile-top-bar-right {
+    display: none;
+
+
+    background: rgba(0, 0, 0, 0.247);
+    width: 10vw;
+    height: 80vh;
+    position: absolute;
+    z-index: 9;
+    margin-top: 20vh;
+    margin-left: 90vw;
+    border-radius: 0px;
+    color: black;
+    text-align: center;
+    padding: 1.5vh;
+    mix-blend-mode: screen;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 15px 2px #141414;
+
+  }
+
+  .mobile-bottom-bar {
+    display: none;
+
+
+    background: rgba(0, 0, 0, 0.247);
+    width: 40vw;
+    height: 4vh;
+    position: absolute;
+    z-index: 9;
+    margin-top: 88vh;
+    margin-left: 30vw;
+    border-radius: 40px;
+    color: black;
+    text-align: center;
+    padding: 1.5vh;
+    mix-blend-mode: screen;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 15px 2px #141414;
+
+  }
+
+  .bottom-menu {
+    width: 100vw;
+    height: 5vh;
+
+    background-color: white;
+    animation-name: BottomMenuUp;
+    animation-duration: 3s;
+  }
+
+  @keyframes BottomMenuUp {
+    0% {
+      height: 5vh;
+    }
+
+    25% {
+      height: 10vh;
+    }
+
+    50% {
+      height: 15vh;
+    }
+
+    75% {
+      height: 20vh;
+    }
+
+    100% {
+      height: 25vh;
+    }
+  }
+
+
+
+
+
+  .mobile-instructions {
+
+    width: 100vw;
+
+    position: absolute;
+    margin-top: 20vh;
+
+    text-align: center;
+    font-size: x-small;
+    color: white;
+
+  }
+
+  /*MOBILE SCROLLING TEXT FOR INFO & ALERTS INSTRUCTIONS ON OPENING A PACK*/
+
+  /* Container styles */
+  .scrolling-text-container {
+    /* background-color: #eff5ff1e; previous*/
+    background-color: #2c2c2c00;
+
+    border-radius: 4px;
+    overflow: hidden;
+
+    position: fixed;
+    /*top: 28vh; previous*/
+    top: 32vh;
+    opacity: 30%;
+  }
+
+  /* Inner container styles */
+  .scrolling-text-inner {
+    display: flex;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 0;
+  }
+
+  /* Text styles */
+  .scrolling-text {
+    display: flex;
+  }
+
+  .scrolling-text-item-1 {
+    padding: 0 30px;
+    color: white;
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+
+  }
+
+  .scrolling-text-item-2 {
+    padding: 0 30px;
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 5px rgb(255, 0, 0);
+
+  }
+
+  .scrolling-text-item-divider {
+    padding: 0 30px;
+    color: rgb(255, 187, 0);
+    text-shadow: 2px 2px 5px rgb(255, 208, 0);
+
+  }
+
+  .scrolling-text-item-temporary {
+    padding: 0 30px;
+    color: rgb(92, 143, 253);
+    text-shadow: 2px 2px 5px rgb(40, 116, 202);
+
+  }
+
+
+  /* Apply the animation to the text items */
+  .scrolling-text-inner>div {
+    animation: var(--direction) var(--marquee-speed) linear infinite;
+    animation-duration: 18s;
+  }
+
+  /* Pause the animation when a user hovers over it */
+  .scrolling-text-container:hover .scrolling-text-inner>div {
+    animation-play-state: paused;
+  }
+
+  /* Setting the Animation using Keyframes */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+
+
+
+
+
+  /*MOBILE SCROLLING TEXT        version two for bottom*/
+
+  /* Container styles */
+  .scrolling-text-container-v2 {
+    background-color: #2c2c2c00;
+    border-radius: 4px;
+    overflow: hidden;
+
+    position: fixed;
+    /*ORIGINAL at 80vh*/
+    top: 23vh;
+
+    width: 100vw;
+
+    opacity: 70%;
+
+    /*-webkit-box-reflect: below 0vh linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));*/
+
+  }
+
+  /* Inner container styles */
+  .scrolling-text-inner-v2 {
+    display: flex;
+    white-space: nowrap;
+    font-size: 26px;
+    font-weight: 600;
+    padding: 8px 0;
+  }
+
+  /* Text styles */
+  .scrolling-text-v2 {
+    display: flex;
+  }
+
+  .scrolling-text-item-1-v2 {
+    padding: 0 30px;
+    color: white;
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+
+  }
+
+  .scrolling-text-item-2-v2 {
+    padding: 0 30px;
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 5px rgb(255, 0, 0);
+
+  }
+
+  .scrolling-text-item-divider-v2 {
+    padding: 0 30px;
+    color: rgb(255, 187, 0);
+    text-shadow: 2px 2px 5px rgb(255, 208, 0);
+
+  }
+
+  .scrolling-text-item-temporary-v2 {
+    padding: 0 30px;
+    color: rgb(92, 143, 253);
+    text-shadow: 2px 2px 5px rgb(40, 116, 202);
+
+  }
+
+
+  /* Apply the animation to the text items */
+  .scrolling-text-inner-v2>div {
+    animation: var(--direction) var(--marquee-speed) linear infinite;
+  }
+
+  /* Pause the animation when a user hovers over it */
+  .scrolling-text-container-v2:hover .scrolling-text-inner-v2>div {
+    animation-play-state: paused;
+  }
+
+  /* Setting the Animation using Keyframes */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+
+
+  /*MOBILE SCROLLING TEXT        version three for bottom*/
+
+  /* Container styles */
+  .scrolling-text-container-v3 {
+    background-color: #2c2c2c00;
+    /*background: linear-gradient(to bottom, #111, #2c2c2c);*/
+    border-radius: 4px;
+    overflow: hidden;
+
+    position: fixed;
+    /*ORIGINAL at 80vh*/
+    top: 20vh;
+
+    width: 100vw;
+
+    opacity: 40%;
+
+    /*-webkit-box-reflect: below 0vh linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));*/
+
+  }
+
+  /* Inner container styles */
+  .scrolling-text-inner-v3 {
+    display: flex;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 0;
+  }
+
+  /* Text styles */
+  .scrolling-text-v3 {
+    display: flex;
+  }
+
+  .scrolling-text-item-1-v3 {
+    padding: 0 30px;
+    color: white;
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+
+  }
+
+  .scrolling-text-item-2-v3 {
+    padding: 0 30px;
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 5px rgb(255, 0, 0);
+
+  }
+
+  .scrolling-text-item-divider-v3 {
+    padding: 0 30px;
+    color: rgb(255, 187, 0);
+    text-shadow: 2px 2px 5px rgb(255, 208, 0);
+
+  }
+
+  .scrolling-text-item-temporary-v3 {
+    padding: 0 30px;
+    color: rgb(92, 143, 253);
+    text-shadow: 2px 2px 5px rgb(40, 116, 202);
+
+  }
+
+
+  /* Apply the animation to the text items */
+  .scrolling-text-inner-v3>div {
+    animation: var(--direction) var(--marquee-speed) linear infinite;
+  }
+
+  /* Pause the animation when a user hovers over it */
+  .scrolling-text-container-v3:hover .scrolling-text-inner-v3>div {
+    animation-play-state: paused;
+  }
+
+  /* Setting the Animation using Keyframes */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+
+
+
+  /*MOBILE SCROLLING TEXT        version four for bottom*/
+
+  /* Container styles */
+  .scrolling-text-container-v4 {
+    background-color: #2c2c2c00;
+    /*background: linear-gradient(to bottom, #111, #2c2c2c);*/
+    border-radius: 4px;
+    overflow: hidden;
+
+    position: fixed;
+    /*ORIGINAL at 80vh*/
+    top: 28vh;
+
+    width: 100vw;
+
+    /*-webkit-box-reflect: below 0vh linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));*/
+  }
+
+  /* Inner container styles */
+  .scrolling-text-inner-v4 {
+    display: flex;
+    white-space: nowrap;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 8px 0;
+  }
+
+  /* Text styles */
+  .scrolling-text-v4 {
+    display: flex;
+  }
+
+  .scrolling-text-item-1-v4 {
+    padding: 0 30px;
+    color: white;
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+
+  }
+
+  .scrolling-text-item-2-v4 {
+    padding: 0 30px;
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 5px rgb(255, 0, 0);
+
+  }
+
+  .scrolling-text-item-divider-v4 {
+    padding: 0 30px;
+    color: rgb(255, 187, 0);
+    text-shadow: 2px 2px 5px rgb(255, 208, 0);
+
+  }
+
+  .scrolling-text-item-temporary-v4 {
+    padding: 0 30px;
+    color: rgb(92, 143, 253);
+    text-shadow: 2px 2px 5px rgb(40, 116, 202);
+
+  }
+
+
+  /* Apply the animation to the text items */
+  .scrolling-text-inner-v4>div {
+    animation: var(--direction) var(--marquee-speed) linear infinite;
+    animation-duration: 25s;
+
+  }
+
+  /* Pause the animation when a user hovers over it */
+  .scrolling-text-container-v4:hover .scrolling-text-inner-v4>div {
+    animation-play-state: paused;
+  }
+
+  /* Setting the Animation using Keyframes */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+
+  .how-i-made-this-site-container {
+    display: none;
+  }
+
+  .about-me-container {
+    display: none;
+  }
+
+  .slots-container {
+    display: none;
+  }
+
+  .profile-container {
+    display: none;
+  }
+
+}
+
